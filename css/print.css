@@ -1,0 +1,168 @@
+/* ============================================================
+   SKYBUD Forms — Print Stylesheet
+   ============================================================ */
+
+/* Print-шапка — скрыта на экране, видна в PDF */
+.print-header {
+  display: none;
+}
+
+@media print {
+  /* --- Скрываем навигационные и интерактивные элементы --- */
+  .site-header,
+  .form-page-header,
+  .no-print,
+  .btn,
+  .toast {
+    display: none !important;
+  }
+
+  /* --- Показываем print-шапку --- */
+  .print-header {
+    display: flex !important;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 12pt;
+    margin-bottom: 16pt;
+    border-bottom: 1.5pt solid #1A1A1A;
+  }
+
+  .print-header__logo {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 18pt;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #1A1A1A;
+  }
+
+  .print-header__meta {
+    font-size: 9pt;
+    color: #6B6860;
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  /* --- Сброс фонов и базовые стили --- */
+  body {
+    background: #fff !important;
+    font-size: 10pt;
+    color: #1A1A1A;
+    font-family: 'Manrope', Arial, sans-serif;
+  }
+
+  .form-body {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+
+  /* --- Секции форм --- */
+  .form-section {
+    border: 1pt solid #ccc !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin-bottom: 8pt;
+    overflow: visible;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .form-section__header {
+    background: #f0f0f0 !important;
+    padding: 6pt 10pt !important;
+    border-bottom: 1pt solid #ccc !important;
+  }
+
+  .form-section__num {
+    width: 18pt;
+    height: 18pt;
+    font-size: 8pt;
+  }
+
+  .form-section__title {
+    font-size: 8pt;
+    letter-spacing: 0.08em;
+  }
+
+  .form-section__body {
+    padding: 10pt !important;
+    gap: 8pt !important;
+  }
+
+  /* --- Поля --- */
+  .form-group { gap: 2pt; }
+
+  .field-label {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #6B6860;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"],
+  input[type="email"],
+  select,
+  textarea {
+    border: 1pt solid #ccc !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 4pt 6pt !important;
+    font-size: 10pt !important;
+    min-height: auto !important;
+    background: #fff !important;
+  }
+
+  textarea { min-height: 40pt !important; }
+  textarea.tall { min-height: 60pt !important; }
+
+  /* --- Radio и Checkbox --- */
+  .radio-option,
+  .checkbox-option,
+  .radio-inline-row {
+    font-size: 9.5pt;
+  }
+
+  /* --- B2B --- */
+  .section--b2b.b2b-hidden-for-print {
+    display: none !important;
+  }
+
+  .section--b2b .form-section__header {
+    background: #FAF5EC !important;
+  }
+
+  /* --- Формат страницы А4 --- */
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+
+  /* --- Разрывы страниц --- */
+  .form-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Разрешаем разрыв между секциями */
+  .form-body > * + * {
+    break-before: auto;
+  }
+
+  /* --- Скрываем toast --- */
+  .toast { display: none !important; }
+
+  /* --- Inline поле --- */
+  .inline-field {
+    border-bottom: 1pt solid #1A1A1A !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+    padding: 0 4pt !important;
+  }
+}
