@@ -14,7 +14,7 @@
   <div class="print-header">
     <div class="print-header__logo">SKYBUD</div>
     <div class="print-header__meta">
-      Engineering Call Interview Form<br>
+      <span data-i18n="print.subtitle">Engineering Call Interview Form</span><br>
       <span id="print-date"></span>
     </div>
   </div>
@@ -22,20 +22,24 @@
   <!-- Шапка сайта -->
   <header class="site-header no-print">
     <a class="site-logo" href="index.html"><span>SKY</span>BUD</a>
-    <div class="header-meta">Формы интервью</div>
+    <div class="header-meta" data-i18n="header.meta">Формы интервью</div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="de">DE</button>
+    </div>
   </header>
 
   <!-- Шапка страницы формы -->
   <div class="form-page-header no-print">
     <div class="form-page-header__left">
-      <a href="index.html" class="btn btn--ghost btn--sm">← Назад</a>
+      <a href="index.html" class="btn btn--ghost btn--sm" data-i18n="btn.back">← Назад</a>
       <span class="form-page-header__title">SKYBUD — Engineering Call Interview Form</span>
-      <span class="form-page-header__tag">Engineering Form</span>
+      <span class="form-page-header__tag" data-i18n="page.tag">Engineering Form</span>
     </div>
     <div class="form-page-header__actions">
-      <button id="btn-clear" class="btn btn--danger btn--sm">Очистить</button>
-      <button class="btn btn--secondary btn--sm" onclick="window.print()">Печать</button>
-      <button id="btn-pdf" class="btn btn--primary btn--sm" onclick="downloadPDF()">Скачать PDF</button>
+      <button id="btn-clear" class="btn btn--danger btn--sm" data-i18n="btn.clear">Очистить</button>
+      <button class="btn btn--secondary btn--sm" onclick="window.print()" data-i18n="btn.print">Печать</button>
+      <button id="btn-pdf" class="btn btn--primary btn--sm" onclick="downloadPDF()" data-i18n="btn.pdf">Скачать PDF</button>
     </div>
   </div>
 
@@ -46,45 +50,50 @@
     <section class="form-section" id="section-1">
       <div class="form-section__header">
         <div class="form-section__num">1</div>
-        <h2 class="form-section__title">Данные звонка</h2>
+        <h2 class="form-section__title" data-i18n="s1.title">Данные звонка</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-row">
           <div class="form-group">
-            <label class="field-label" for="call-date">Дата</label>
+            <label class="field-label" for="call-date" data-i18n="label.date">Дата</label>
             <input type="date" id="call-date" name="call-date">
           </div>
           <div class="form-group">
-            <label class="field-label" for="manager-name">Менеджер</label>
-            <input type="text" id="manager-name" name="manager-name" placeholder="Имя менеджера">
+            <label class="field-label" for="manager-name" data-i18n="label.manager">Менеджер</label>
+            <input type="text" id="manager-name" name="manager-name"
+                   data-i18n-ph="ph.manager" placeholder="Имя менеджера">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label class="field-label" for="client-phone">Телефон клиента</label>
-            <input type="tel" id="client-phone" name="client-phone" placeholder="+49 000 000 0000">
+            <label class="field-label" for="client-phone" data-i18n="label.client-phone">Телефон клиента</label>
+            <input type="tel" id="client-phone" name="client-phone"
+                   data-i18n-ph="ph.client-phone" placeholder="+49 000 000 0000">
           </div>
           <div class="form-group">
-            <label class="field-label" for="client-name">Имя клиента</label>
-            <input type="text" id="client-name" name="client-name" placeholder="Имя и фамилия">
+            <label class="field-label" for="client-name" data-i18n="label.client-name">Имя клиента</label>
+            <input type="text" id="client-name" name="client-name"
+                   data-i18n-ph="ph.client-name" placeholder="Имя и фамилия">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label class="field-label" for="client-company">Компания</label>
-            <input type="text" id="client-company" name="client-company" placeholder="Название компании">
+            <label class="field-label" for="client-company" data-i18n="label.company">Компания</label>
+            <input type="text" id="client-company" name="client-company"
+                   data-i18n-ph="ph.company" placeholder="Название компании">
           </div>
           <div class="form-group">
-            <label class="field-label" for="client-city">Город / адрес</label>
-            <input type="text" id="client-city" name="client-city" placeholder="Город, регион">
+            <label class="field-label" for="client-city" data-i18n="label.city">Город / адрес</label>
+            <input type="text" id="client-city" name="client-city"
+                   data-i18n-ph="ph.city" placeholder="Город, регион">
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label">Тип клиента</label>
+          <label class="field-label" data-i18n="label.client-type">Тип клиента</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
               <input type="radio" name="client-type" value="b2c"> B2C
@@ -96,19 +105,19 @@
         </div>
 
         <div class="form-group">
-          <label class="field-label">Источник лида</label>
+          <label class="field-label" data-i18n="label.lead-source">Источник лида</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="lead-source" value="site"> сайт
+              <input type="radio" name="lead-source" value="site"><span data-i18n="opt.site"> сайт</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="lead-source" value="recommendation"> рекомендация
+              <input type="radio" name="lead-source" value="recommendation"><span data-i18n="opt.recommendation"> рекомендация</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="lead-source" value="partner"> партнёр
+              <input type="radio" name="lead-source" value="partner"><span data-i18n="opt.partner"> партнёр</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="lead-source" value="other"> другое
+              <input type="radio" name="lead-source" value="other"><span data-i18n="opt.other"> другое</span>
             </label>
           </div>
         </div>
@@ -120,41 +129,42 @@
     <section class="form-section" id="section-2">
       <div class="form-section__header">
         <div class="form-section__num">2</div>
-        <h2 class="form-section__title">Контекст проекта</h2>
+        <h2 class="form-section__title" data-i18n="s2.title">Контекст проекта</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label" for="project-context">Что именно требуется клиенту?</label>
-          <textarea id="project-context" name="project-context" class="tall" placeholder="Опишите запрос клиента..."></textarea>
+          <label class="field-label" for="project-context" data-i18n="label.project-context">Что именно требуется клиенту?</label>
+          <textarea id="project-context" name="project-context" class="tall"
+                    data-i18n-ph="ph.project-context" placeholder="Опишите запрос клиента..."></textarea>
         </div>
 
         <div class="form-group">
-          <label class="field-label">Тип объекта</label>
+          <label class="field-label" data-i18n="label.object-type">Тип объекта</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="object-type" value="apartment"> квартира
+              <input type="radio" name="object-type" value="apartment"><span data-i18n="opt.apartment"> квартира</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="object-type" value="house"> дом
+              <input type="radio" name="object-type" value="house"><span data-i18n="opt.house"> дом</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="object-type" value="commercial"> коммерческий объект
+              <input type="radio" name="object-type" value="commercial"><span data-i18n="opt.commercial"> коммерческий объект</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="object-type" value="other"> другое
+              <input type="radio" name="object-type" value="other"><span data-i18n="opt.other"> другое</span>
             </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label">Количество объектов</label>
+          <label class="field-label" data-i18n="label.object-count">Количество объектов</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="object-count" value="one"> один
+              <input type="radio" name="object-count" value="one"><span data-i18n="opt.one"> один</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="object-count" value="several"> несколько
+              <input type="radio" name="object-count" value="several"><span data-i18n="opt.several"> несколько</span>
             </label>
           </div>
         </div>
@@ -166,55 +176,56 @@
     <section class="form-section" id="section-3">
       <div class="form-section__header">
         <div class="form-section__num">3</div>
-        <h2 class="form-section__title">Стадия объекта</h2>
+        <h2 class="form-section__title" data-i18n="s3.title">Стадия объекта</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label">Стадия</label>
+          <label class="field-label" data-i18n="label.object-stage">Стадия</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="object-stage" value="designing"> проектируется
+              <input type="radio" name="object-stage" value="designing"><span data-i18n="opt.designing"> проектируется</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="object-stage" value="building"> строится
+              <input type="radio" name="object-stage" value="building"><span data-i18n="opt.building"> строится</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="object-stage" value="operating"> эксплуатируется
+              <input type="radio" name="object-stage" value="operating"><span data-i18n="opt.operating"> эксплуатируется</span>
             </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label">Тип проекта</label>
+          <label class="field-label" data-i18n="label.project-type">Тип проекта</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="project-type" value="new"> новое строительство
+              <input type="radio" name="project-type" value="new"><span data-i18n="opt.new"> новое строительство</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="project-type" value="reconstruction"> реконструкция
+              <input type="radio" name="project-type" value="reconstruction"><span data-i18n="opt.reconstruction"> реконструкция</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="project-type" value="modernization"> модернизация
+              <input type="radio" name="project-type" value="modernization"><span data-i18n="opt.modernization"> модернизация</span>
             </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label">Есть ли уже выполненные инженерные работы?</label>
+          <label class="field-label" data-i18n="label.has-existing-works">Есть ли уже выполненные инженерные работы?</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="has-existing-works" value="yes"> да
+              <input type="radio" name="has-existing-works" value="yes"><span data-i18n="opt.yes"> да</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="has-existing-works" value="no"> нет
+              <input type="radio" name="has-existing-works" value="no"><span data-i18n="opt.no"> нет</span>
             </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label" for="existing-works-details">Какие</label>
-          <textarea id="existing-works-details" name="existing-works-details" placeholder="Описание выполненных работ..."></textarea>
+          <label class="field-label" for="existing-works-details" data-i18n="label.existing-works-text">Какие</label>
+          <textarea id="existing-works-details" name="existing-works-details"
+                    data-i18n-ph="ph.existing-works" placeholder="Описание выполненных работ..."></textarea>
         </div>
 
       </div>
@@ -224,48 +235,48 @@
     <section class="form-section" id="section-4">
       <div class="form-section__header">
         <div class="form-section__num">4</div>
-        <h2 class="form-section__title">Исходные данные для расчёта</h2>
+        <h2 class="form-section__title" data-i18n="s4.title">Исходные данные для расчёта</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label">Energy Ausweis</label>
+          <label class="field-label" data-i18n="label.energy-ausweis">Energy Ausweis</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="energy-ausweis" value="yes"> есть
+              <input type="radio" name="energy-ausweis" value="yes"><span data-i18n="opt.available"> есть</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="energy-ausweis" value="will-provide"> будет предоставлен
+              <input type="radio" name="energy-ausweis" value="will-provide"><span data-i18n="opt.will-provide"> будет предоставлен</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="energy-ausweis" value="no"> нет
+              <input type="radio" name="energy-ausweis" value="no"><span data-i18n="opt.not-available"> нет</span>
             </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label">Планы / чертежи</label>
+          <label class="field-label" data-i18n="label.has-plans">Планы / чертежи</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="has-plans" value="yes"> есть
+              <input type="radio" name="has-plans" value="yes"><span data-i18n="opt.available"> есть</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="has-plans" value="no"> нет
+              <input type="radio" name="has-plans" value="no"><span data-i18n="opt.not-available"> нет</span>
             </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label">Фото / видео объекта</label>
+          <label class="field-label" data-i18n="label.has-photos">Фото / видео объекта</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="has-photos" value="yes"> есть
+              <input type="radio" name="has-photos" value="yes"><span data-i18n="opt.available"> есть</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="has-photos" value="will-provide"> будет предоставлено
+              <input type="radio" name="has-photos" value="will-provide"><span data-i18n="opt.will-provide-pl"> будет предоставлено</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="has-photos" value="no"> нет
+              <input type="radio" name="has-photos" value="no"><span data-i18n="opt.not-available"> нет</span>
             </label>
           </div>
         </div>
@@ -277,36 +288,36 @@
     <section class="form-section" id="section-5">
       <div class="form-section__header">
         <div class="form-section__num">5</div>
-        <h2 class="form-section__title">Инженерные системы</h2>
+        <h2 class="form-section__title" data-i18n="s5.title">Инженерные системы</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label">Тип системы отопления</label>
+          <label class="field-label" data-i18n="label.heating-type">Тип системы отопления</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="heating-type" value="gas"> газ
+              <input type="radio" name="heating-type" value="gas"><span data-i18n="opt.gas"> газ</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="heating-type" value="heat-pump"> тепловой насос
+              <input type="radio" name="heating-type" value="heat-pump"><span data-i18n="opt.heat-pump"> тепловой насос</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="heating-type" value="other"> другое
+              <input type="radio" name="heating-type" value="other"><span data-i18n="opt.other"> другое</span>
             </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label">Система уже есть?</label>
+          <label class="field-label" data-i18n="label.has-system">Система уже есть?</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="has-system" value="yes"> да
+              <input type="radio" name="has-system" value="yes"><span data-i18n="opt.yes"> да</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="has-system" value="no"> нет
+              <input type="radio" name="has-system" value="no"><span data-i18n="opt.no"> нет</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="has-system" value="partial"> частично
+              <input type="radio" name="has-system" value="partial"><span data-i18n="opt.partial"> частично</span>
             </label>
           </div>
         </div>
@@ -318,30 +329,30 @@
     <section class="form-section" id="section-6">
       <div class="form-section__header">
         <div class="form-section__num">6</div>
-        <h2 class="form-section__title">Дополнительные системы</h2>
+        <h2 class="form-section__title" data-i18n="s6.title">Дополнительные системы</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label">Какие системы нужны?</label>
+          <label class="field-label" data-i18n="label.add-systems">Какие системы нужны?</label>
           <div class="checkbox-group checkbox-group--row">
             <label class="checkbox-option">
-              <input type="checkbox" id="sys-water"> Водоснабжение
+              <input type="checkbox" id="sys-water"><span data-i18n="sys.water"> Водоснабжение</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="sys-floor"> Тёплый пол
+              <input type="checkbox" id="sys-floor"><span data-i18n="sys.floor"> Тёплый пол</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="sys-radiators"> Радиаторы
+              <input type="checkbox" id="sys-radiators"><span data-i18n="sys.radiators"> Радиаторы</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="sys-boiler-new"> Котельная — новая
+              <input type="checkbox" id="sys-boiler-new"><span data-i18n="sys.boiler-new"> Котельная — новая</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="sys-boiler-mod"> Котельная — модернизация
+              <input type="checkbox" id="sys-boiler-mod"><span data-i18n="sys.boiler-mod"> Котельная — модернизация</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="sys-ventilation"> Вентиляция — есть проект
+              <input type="checkbox" id="sys-ventilation"><span data-i18n="sys.ventilation"> Вентиляция — есть проект</span>
             </label>
           </div>
         </div>
@@ -353,28 +364,29 @@
     <section class="form-section" id="section-7">
       <div class="form-section__header">
         <div class="form-section__num">7</div>
-        <h2 class="form-section__title">Технические условия</h2>
+        <h2 class="form-section__title" data-i18n="s7.title">Технические условия</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label">Расположение котельной</label>
+          <label class="field-label" data-i18n="label.boiler-location">Расположение котельной</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="boiler-location" value="basement"> подвал
+              <input type="radio" name="boiler-location" value="basement"><span data-i18n="opt.basement"> подвал</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="boiler-location" value="ground-floor"> первый этаж
+              <input type="radio" name="boiler-location" value="ground-floor"><span data-i18n="opt.ground-floor"> первый этаж</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="boiler-location" value="separate-room"> отдельное помещение
+              <input type="radio" name="boiler-location" value="separate-room"><span data-i18n="opt.separate-room"> отдельное помещение</span>
             </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label" for="room-restrictions">Есть ли ограничения по помещению?</label>
-          <textarea id="room-restrictions" name="room-restrictions" placeholder="Опишите ограничения..."></textarea>
+          <label class="field-label" for="room-restrictions" data-i18n="label.room-restrictions">Есть ли ограничения по помещению?</label>
+          <textarea id="room-restrictions" name="room-restrictions"
+                    data-i18n-ph="ph.restrictions" placeholder="Опишите ограничения..."></textarea>
         </div>
 
       </div>
@@ -384,21 +396,21 @@
     <section class="form-section" id="section-8">
       <div class="form-section__header">
         <div class="form-section__num">8</div>
-        <h2 class="form-section__title">Формат работ</h2>
+        <h2 class="form-section__title" data-i18n="s8.title">Формат работ</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label">Клиенту требуется</label>
+          <label class="field-label" data-i18n="label.work-format">Клиенту требуется</label>
           <div class="radio-group">
             <label class="radio-option">
-              <input type="radio" name="work-format" value="install-only"> только монтаж
+              <input type="radio" name="work-format" value="install-only"><span data-i18n="opt.install-only"> только монтаж</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="work-format" value="install-materials"> монтаж + материалы
+              <input type="radio" name="work-format" value="install-materials"><span data-i18n="opt.install-mat"> монтаж + материалы</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="work-format" value="install-materials-equipment"> монтаж + материалы + оборудование
+              <input type="radio" name="work-format" value="install-materials-equipment"><span data-i18n="opt.install-all"> монтаж + материалы + оборудование</span>
             </label>
           </div>
         </div>
@@ -410,30 +422,32 @@
     <section class="form-section" id="section-9">
       <div class="form-section__header">
         <div class="form-section__num">9</div>
-        <h2 class="form-section__title">Сроки</h2>
+        <h2 class="form-section__title" data-i18n="s9.title">Сроки</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label">Начало работ</label>
+          <label class="field-label" data-i18n="label.start-time">Начало работ</label>
           <div class="radio-inline-group">
             <label class="radio-inline-row">
-              <input type="radio" name="start-time" value="soon"> в ближайшее время
+              <input type="radio" name="start-time" value="soon"><span data-i18n="opt.soon"> в ближайшее время</span>
             </label>
             <label class="radio-inline-row">
               <input type="radio" name="start-time" value="within">
-              через
-              <input type="text" class="inline-field" id="start-time-value" name="start-time-value" placeholder="срок">
+              <span data-i18n="opt.within"> через</span>
+              <input type="text" class="inline-field" id="start-time-value" name="start-time-value"
+                     data-i18n-ph="ph.time-value" placeholder="срок">
             </label>
             <label class="radio-inline-row">
-              <input type="radio" name="start-time" value="unclear"> без чётких сроков
+              <input type="radio" name="start-time" value="unclear"><span data-i18n="opt.unclear"> без чётких сроков</span>
             </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label" for="desired-deadline">Желаемый срок завершения</label>
-          <input type="text" id="desired-deadline" name="desired-deadline" placeholder="Например: до конца года">
+          <label class="field-label" for="desired-deadline" data-i18n="label.desired-deadline">Желаемый срок завершения</label>
+          <input type="text" id="desired-deadline" name="desired-deadline"
+                 data-i18n-ph="ph.deadline" placeholder="Например: до конца года">
         </div>
 
       </div>
@@ -443,23 +457,24 @@
     <section class="form-section" id="section-10">
       <div class="form-section__header">
         <div class="form-section__num">10</div>
-        <h2 class="form-section__title">Бюджет</h2>
+        <h2 class="form-section__title" data-i18n="s10.title">Бюджет</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label" for="project-budget">Ориентировочный бюджет проекта</label>
-          <input type="text" id="project-budget" name="project-budget" placeholder="Например: 80 000 €">
+          <label class="field-label" for="project-budget" data-i18n="label.project-budget">Ориентировочный бюджет проекта</label>
+          <input type="text" id="project-budget" name="project-budget"
+                 data-i18n-ph="ph.budget" placeholder="Например: 80 000 €">
         </div>
 
         <div class="form-group">
-          <label class="field-label">Клиент ориентируется в бюджете</label>
+          <label class="field-label" data-i18n="label.budget-aware">Клиент ориентируется в бюджете</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="budget-aware" value="yes"> да
+              <input type="radio" name="budget-aware" value="yes"><span data-i18n="opt.yes"> да</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="budget-aware" value="no"> нет
+              <input type="radio" name="budget-aware" value="no"><span data-i18n="opt.no"> нет</span>
             </label>
           </div>
         </div>
@@ -471,35 +486,36 @@
     <section class="form-section section--b2b" id="b2b-section">
       <div class="form-section__header">
         <div class="form-section__num">11</div>
-        <h2 class="form-section__title">Дополнительно для B2B</h2>
+        <h2 class="form-section__title" data-i18n="s11.title">Дополнительно для B2B</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label" for="b2b-activity">Основная деятельность компании</label>
-          <input type="text" id="b2b-activity" name="b2b-activity" placeholder="Сфера деятельности">
+          <label class="field-label" for="b2b-activity" data-i18n="label.b2b-activity">Основная деятельность компании</label>
+          <input type="text" id="b2b-activity" name="b2b-activity"
+                 data-i18n-ph="ph.b2b-activity" placeholder="Сфера деятельности">
         </div>
 
         <div class="form-group">
-          <label class="field-label">Тип объектов</label>
+          <label class="field-label" data-i18n="label.b2b-obj-types">Тип объектов</label>
           <div class="radio-group radio-group--row">
             <label class="radio-option">
-              <input type="radio" name="b2b-object-types" value="residential"> жилые
+              <input type="radio" name="b2b-object-types" value="residential"><span data-i18n="opt.residential"> жилые</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="b2b-object-types" value="commercial"> коммерческие
+              <input type="radio" name="b2b-object-types" value="commercial"><span data-i18n="opt.commercial-b2b"> коммерческие</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="b2b-object-types" value="mixed"> смешанные
+              <input type="radio" name="b2b-object-types" value="mixed"><span data-i18n="opt.mixed"> смешанные</span>
             </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label" for="b2b-yearly-count">Примерное количество проектов в год</label>
+          <label class="field-label" for="b2b-yearly-count" data-i18n="label.b2b-yearly">Примерное количество проектов в год</label>
           <div class="field-with-suffix">
             <input type="number" id="b2b-yearly-count" name="b2b-yearly-count" min="1" placeholder="0">
-            <span class="field-suffix">в год</span>
+            <span class="field-suffix" data-i18n="suffix.per-year">в год</span>
           </div>
         </div>
 
@@ -510,27 +526,27 @@
     <section class="form-section" id="section-12">
       <div class="form-section__header">
         <div class="form-section__num">12</div>
-        <h2 class="form-section__title">Проблемы с подрядчиками</h2>
+        <h2 class="form-section__title" data-i18n="s12.title">Проблемы с подрядчиками</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label">Что не устраивает в работе подрядчиков?</label>
+          <label class="field-label" data-i18n="label.problems">Что не устраивает в работе подрядчиков?</label>
           <div class="checkbox-group checkbox-group--row">
             <label class="checkbox-option">
-              <input type="checkbox" id="problem-deadlines"> Сроки
+              <input type="checkbox" id="problem-deadlines"><span data-i18n="prob.deadlines"> Сроки</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="problem-quality"> Качество
+              <input type="checkbox" id="problem-quality"><span data-i18n="prob.quality"> Качество</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="problem-communication"> Коммуникация
+              <input type="checkbox" id="problem-communication"><span data-i18n="prob.comm"> Коммуникация</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="problem-responsibility"> Ответственность
+              <input type="checkbox" id="problem-responsibility"><span data-i18n="prob.resp"> Ответственность</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="problem-other"> Другое
+              <input type="checkbox" id="problem-other"><span data-i18n="prob.other"> Другое</span>
             </label>
           </div>
         </div>
@@ -542,13 +558,14 @@
     <section class="form-section" id="section-13">
       <div class="form-section__header">
         <div class="form-section__num">13</div>
-        <h2 class="form-section__title">Ожидания от подрядчика</h2>
+        <h2 class="form-section__title" data-i18n="s13.title">Ожидания от подрядчика</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label" for="ideal-contractor">Идеальный формат сотрудничества</label>
-          <textarea id="ideal-contractor" name="ideal-contractor" class="tall" placeholder="Ожидания клиента от подрядчика..."></textarea>
+          <label class="field-label" for="ideal-contractor" data-i18n="label.ideal-contractor">Идеальный формат сотрудничества</label>
+          <textarea id="ideal-contractor" name="ideal-contractor" class="tall"
+                    data-i18n-ph="ph.ideal" placeholder="Ожидания клиента от подрядчика..."></textarea>
         </div>
 
       </div>
@@ -558,13 +575,14 @@
     <section class="form-section" id="section-14">
       <div class="form-section__header">
         <div class="form-section__num">14</div>
-        <h2 class="form-section__title">Резюме проекта</h2>
+        <h2 class="form-section__title" data-i18n="s14.title">Резюме проекта</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label" for="project-summary">Краткое описание объекта</label>
-          <textarea id="project-summary" name="project-summary" class="tall" placeholder="Краткое описание проекта и итоги разговора..."></textarea>
+          <label class="field-label" for="project-summary" data-i18n="label.project-summary">Краткое описание объекта</label>
+          <textarea id="project-summary" name="project-summary" class="tall"
+                    data-i18n-ph="ph.summary" placeholder="Краткое описание проекта и итоги разговора..."></textarea>
         </div>
 
       </div>
@@ -574,30 +592,30 @@
     <section class="form-section" id="section-15">
       <div class="form-section__header">
         <div class="form-section__num">15</div>
-        <h2 class="form-section__title">Следующий шаг</h2>
+        <h2 class="form-section__title" data-i18n="s15.title">Следующий шаг</h2>
       </div>
       <div class="form-section__body">
 
         <div class="form-group">
-          <label class="field-label">Что делаем дальше?</label>
+          <label class="field-label" data-i18n="label.next-steps">Что делаем дальше?</label>
           <div class="checkbox-group checkbox-group--row">
             <label class="checkbox-option">
-              <input type="checkbox" id="next-to-engineer"> Передать инженеру для расчёта
+              <input type="checkbox" id="next-to-engineer"><span data-i18n="next.engineer"> Передать инженеру для расчёта</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="next-need-materials"> Клиент предоставит дополнительные материалы
+              <input type="checkbox" id="next-need-materials"><span data-i18n="next.materials"> Клиент предоставит дополнительные материалы</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="next-site-visit"> Нужен выезд на объект
+              <input type="checkbox" id="next-site-visit"><span data-i18n="next.site-visit"> Нужен выезд на объект</span>
             </label>
             <label class="checkbox-option">
-              <input type="checkbox" id="next-other"> Другое
+              <input type="checkbox" id="next-other"><span data-i18n="next.other"> Другое</span>
             </label>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="field-label" for="next-contact-date">Дата следующего контакта</label>
+          <label class="field-label" for="next-contact-date" data-i18n="label.next-contact-date">Дата следующего контакта</label>
           <input type="date" id="next-contact-date" name="next-contact-date">
         </div>
 
@@ -606,6 +624,8 @@
 
   </div><!-- /.form-body -->
 
+  <script src="js/translations.js" defer></script>
+  <script src="js/lang-switcher.js" defer></script>
   <script src="js/form-engineering.js" defer></script>
 </body>
 </html>

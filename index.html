@@ -12,14 +12,18 @@
   <!-- Шапка сайта -->
   <header class="site-header">
     <a class="site-logo" href="index.html"><span>SKY</span>BUD</a>
-    <div class="header-meta">Система документов</div>
+    <div class="header-meta" data-i18n="header.meta">Формы интервью</div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="de">DE</button>
+    </div>
   </header>
 
   <!-- Hero-блок -->
   <div class="page-hero">
-    <p class="page-hero__eyebrow">SKYBUD / Формы</p>
-    <h1 class="page-hero__title">Формы интервью</h1>
-    <p class="page-hero__subtitle">Выберите форму для заполнения или скачайте пустой шаблон PDF</p>
+    <p class="page-hero__eyebrow" data-i18n="index.eyebrow">SKYBUD / Формы</p>
+    <h1 class="page-hero__title" data-i18n="index.title">Формы интервью</h1>
+    <p class="page-hero__subtitle" data-i18n="index.subtitle">Заполните форму или скачайте пустой шаблон PDF</p>
   </div>
 
   <!-- Каталог форм -->
@@ -28,19 +32,21 @@
 
       <!-- Карточка — Engineering Call Interview Form -->
       <div class="doc-card doc-card--featured">
-        <h2 class="doc-card__title">Engineering Call Interview Form</h2>
-        <p class="doc-card__desc">
+        <h2 class="doc-card__title" data-i18n="index.card-title">Engineering Call Interview Form</h2>
+        <p class="doc-card__desc" data-i18n="index.card-desc">
           Форма для сбора технических данных по объекту, инженерным системам и исходным материалам для расчёта.
         </p>
         <div class="doc-card__actions">
-          <a href="engineering-call-interview-form.html" class="btn btn--primary">Открыть форму</a>
-          <a href="engineering-call-interview-form.html?blank=true" target="_blank" class="btn btn--secondary">Скачать PDF</a>
+          <a href="engineering-call-interview-form.html" class="btn btn--primary" data-i18n="index.btn-open">Открыть форму</a>
+          <a href="engineering-call-interview-form.html?blank=true" target="_blank" class="btn btn--secondary" data-i18n="index.btn-pdf">Скачать PDF</a>
         </div>
       </div>
 
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/translations.js" defer></script>
+  <script src="js/lang-switcher.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
